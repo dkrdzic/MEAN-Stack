@@ -1,0 +1,20 @@
+{
+    "_id" : ObjectId("5f4b8a54cd977f41c471fa36"),
+    "booksToRead" : [],
+    "booksReading" : [],
+    "booksFinished" : [],
+    "following" : [],
+    "notifications" : [],
+    "followHappeningRequests" : [],
+    "name" : "Luka",
+    "surname" : "Lukic",
+    "username" : "luka",
+    "password" : "Luka123$",
+    "birthday" : "2006-08-21",
+    "city" : "Ruma",
+    "country" : "Srbija",
+    "email" : "luka@gmail.com",
+    "userType" : "korisnik",
+    "profileImage" : "http://localhost:4000/uploads/generic.jpg",
+    "__v" : 0
+}

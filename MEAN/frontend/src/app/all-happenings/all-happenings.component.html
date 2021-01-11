@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+  <title>BOOKS</title>
+</head>
+<body>
+  
+  <div class="container-fluid">
+
+   
+    <div class="row">
+
+    
+    
+    <div id="line" class="col-lg-6">
+    
+      <a class="link" routerLink="">
+        Home
+    
+      </a> |
+
+      <a class='link' routerLink="/user">
+        Vrati se nazad
+    
+      </a>
+
+
+    
+    </div>
+    
+    
+    
+    
+    
+    </div>
+    <br/>
+    
+    
+    <br/>
+    <br/>
+
+    <div class="d-flex justify-content-center">
+
+
+<form>
+
+<table class='table'> 
+
+ <thead>
+<tr><th>Naziv</th>
+<th >Datum pocetka</th>
+<th>Datum kraja</th>
+<th>Aktivan</th>
+<th>Javno/privatno</th>
+<th>Kreator</th>
+<th>Opis</th>
+<th>Idi na stranu dogadjaja</th>
+</tr>
+</thead>
+
+<tbody>
+<tr *ngFor="let element of allHappenings" [class.creator]="element.creator==user.username">
+   
+    <td>{{element.name}}</td>
+  <td *ngIf='element.dateBegin'>{{element.dateBegin}}</td>
+  <td *ngIf='!element.dateBegin'>-------------</td>
+  <td *ngIf='element.dateEnd' >{{element.dateEnd}}</td>
+  <td *ngIf='!element.dateEnd'>-------------</td>
+    <td *ngIf='element.active'>Dogadjaj je aktivan</td>
+    <td *ngIf="!element.active">Dogadjaj nije aktivan</td>
+    <td>{{element.type}}</td>
+    <td>{{element.creator}}</td>
+    <td>{{element.description}}</td>
+    <td><input type="submit" value="IDI" (click)="goToHappeningPage(element)" ></td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</form>
+    
+    </div>
+    
+    </div>
+    
+  <footer>
+
+
+  </footer>
+ 
+
+
+
+</body>
+</html>
+

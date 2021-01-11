@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+  <title>LOGIN</title>
+</head>
+<body>
+  
+  <div class="container-fluid">
+
+   
+    <div class="row" >
+    
+   
+    
+    <div class="col-lg-6">
+    
+      <a class="link" routerLink="">
+        Home
+    
+      </a>
+     
+    
+    </div>
+    
+    
+    
+    
+    
+    </div>
+    
+    <br/>
+    <br/>
+
+   <br/>
+   <br/>
+   
+
+
+
+    <div class="d-flex justify-content-start">
+   
+
+
+       
+ <img src='{{user.profileImage}}' style="width:300px;height:300px">
+     
+</div>        
+            
+    <br/>
+<br/>
+
+<form>
+
+<table class="table">
+ 
+  
+
+
+
+
+<tr>
+
+<th>
+    Ime:
+</th>
+
+<td>
+    {{user.name}}
+</td>
+
+<td>
+    <input type="submit" value="Promeni" (click)='showChangeName()'>
+</td>
+
+</tr>
+
+
+<tr *ngIf='changeNameBool'>
+
+  <td>
+<input type='text' name='userName' [(ngModel)]='userName'>
+  </td>
+
+  <td>
+    <input type='submit'  value="Promeni" (click)='changeName()'>
+  </td>
+<td style="color: red;">{{porukaName}}</td>
+
+</tr>
+
+
+
+<tr>
+
+    <th>
+        Prezime:
+    </th>
+    
+    <td>
+        {{user.surname}}
+    </td>
+    
+    <td>
+        <input type="submit" value="Promeni"  (click)="showChangeSurname()" >
+    </td>
+    
+
+
+    </tr>
+    
+
+    <tr *ngIf='changeSurnameBool'>
+
+      <td>
+    <input type='text' name='userSurname' [(ngModel)]='userSurname'>
+      </td>
+    
+      <td>
+        <input type='submit'  value="Promeni" (click)='changeSurname()'>
+      </td>
+    <td style="color: red;">{{porukaSurname}}</td>
+    
+    </tr>
+
+
+
+    <tr>
+
+        <th>
+            Korisnicko ime:
+        </th>
+        
+        <td>
+            {{user.username}}
+        </td>
+        
+        <td>
+            <input type="submit" value="Promeni" (click)="showChangeUsername()">
+        </td>
+        
+        
+        </tr>
+
+
+        <tr *ngIf='changeUsernameBool'>
+
+          <td>
+        <input type='text' name='userUsername' [(ngModel)]='userUsername'>
+          </td>
+        
+          <td>
+            <input type='submit'  value="Promeni" (click)='changeUsername()'>
+          </td>
+        <td style="color: red;">{{porukaUsername}}</td>
+        
+        </tr>
+
+
+
+
+        <tr>
+
+            <th>
+               Datum rodjenja:
+            </th>
+            
+            <td>
+                {{user.birthday}}
+            </td>
+            
+            <td>
+                <input type="submit" value="Promeni" (click)="showChangeBirthday()">
+            </td>
+            
+
+            
+            </tr>
+
+            <tr *ngIf='changeBirthdayBool'>
+
+              <td>
+            <input type='date' name='userBirthday' [(ngModel)]='userBirthday'>
+              </td>
+            
+              <td>
+                <input type='submit'  value="Promeni" (click)='changeBirthday()'>
+              </td>
+            <td style="color: red;">{{porukaBirthday}}</td>
+            
+            </tr>
+        
+
+
+
+
+
+
+            <tr>
+
+                <th>
+                   Grad:
+                </th>
+                
+                <td>
+                    {{user.city}}
+                </td>
+                
+                <td>
+                    <input type="submit" value="Promeni" (click)="showChangeCity()">
+                </td>
+                
+                
+                </tr>
+
+
+                <tr *ngIf='changeCityBool'>
+
+                  <td>
+                <input type='text' name='userCity' [(ngModel)]='userCity'>
+                  </td>
+                
+                  <td>
+                    <input type='submit'  value="Promeni" (click)='changeCity()'>
+                  </td>
+                <td style="color: red;">{{porukaCity}}</td>
+                
+                </tr>
+
+
+
+
+    
+                <tr>
+
+                    <th>
+                      Drzava:
+                    </th>
+                    
+                    <td>
+                        {{user.country}}
+                    </td>
+                    <td>
+                        <input type="submit" value="Promeni" (click)='showChangeCountry()' >
+                    </td>
+                    
+                    
+                    </tr>
+        
+                    <tr *ngIf='changeCountryBool'>
+
+                      <td>
+                    <input type='text' name='userCountry' [(ngModel)]='userCountry'>
+                      </td>
+                    
+                      <td>
+                        <input type='submit'  value="Promeni" (click)='changeCountry()'>
+                      </td>
+                    <td style="color: red;">{{porukaCountry}}</td>
+                    
+                    </tr>
+
+
+
+
+
+                    <tr>
+
+                        <th>
+                          Email:
+                        </th>
+                        
+                        <td>
+                            {{user.email}}
+                        </td>
+                        
+                        <td>
+                            <input type="submit" value="Promeni" (click)="showChangeEmail()">
+                        </td>
+                        
+                        </tr>
+
+
+                        <tr *ngIf='changeEmailBool'>
+
+                          <td>
+                        <input type='text' name='userEmail' [(ngModel)]='userEmail'>
+                          </td>
+                        
+                          <td>
+                            <input type='submit'  value="Promeni" (click)='changeEmail()'>
+                          </td>
+                        <td style="color: red;">{{porukaEmail}}</td>
+                        
+                        </tr>
+
+
+                        <tr>
+
+                          <td>
+                           <a routerLink="/passwordReset">Promeni lozinku</a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td><input type='submit' value="Promeni profilnu sliku" (click)='showChangeImg()'  style="width: 300px;"></td>
+                        </tr>
+            
+<tr *ngIf="changeImgBool">
+
+  <td> <input type="file" file-Model="file.upload" (change)="onFileSelected($event.target.files)" >  </td>
+  <td style="color: red;">{{porukaImg}}</td>
+<td> <input type="submit" value="Promeni" (click)='changeImg()'></td>
+</tr>
+
+</table>
+
+<br/>
+
+<br/>
+<br/>
+
+
+<br/>
+<table class="table">
+<tr><td><h1> Moji komentari</h1></td></tr>
+  <tr>
+    <th >Naziv knjige</th> 
+    <th >Autor(i)</th>
+    <th >Komentar</th>
+
+  </tr>
+
+
+
+  <tr *ngFor="let element1 of arrayCommentAndBook ">
+
+<td id="commentUser" *ngIf="element1.comment.username==user.username" (click)="goToBookPage(element1.book)"> {{element1.book.name}}</td>
+<td *ngIf="element1.comment.username==user.username"> {{element1.book.authors}}</td>
+<td *ngIf="element1.comment.username==user.username"> {{element1.comment.comment}}</td>
+
+
+  </tr>
+
+
+</table>
+
+
+
+
+<br/>
+
+<br/>
+
+
+
+<div class="d-flex justify-content-center">
+
+
+
+<table class="table">
+
+  <tr><td>  <h1 >Pretrazi knjigu</h1></td></tr>
+
+    <tr>
+  
+  
+      <td>Autor</td>
+      
+      <td><input type='text' name='author' [(ngModel)]='author' style="width: 300px;">  </td>
+      
+      
+      </tr>
+      <tr>
+  
+  
+          <td>Naziv</td>
+  
+         
+          
+          <td><input type="text" name='name' [(ngModel)]='name' style="width: 300px;"> </td>
+          
+          
+          </tr>
+  
+       
+          <tr>
+  
+  
+              <td>Zanr</td>
+              
+              <td> 
+                  
+                  <select name='zanr' [(ngModel)]='ganre'style="width: 300px;">
+                  <option *ngFor="let element of ganres"> {{element.name}}</option>
+       
+       
+               </select>
+              
+              </td>
+              
+              
+              </tr>
+        
+  
+  <br/>
+  
+  <tr>
+  
+    <td>
+      <input type='submit' value="Pretrazi" (click)='search()'>
+    </td>
+  </tr>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </table>
+  
+  
+
+
+</div>
+
+
+<br/>
+<br/>
+
+
+
+
+
+
+</form>
+
+
+<br/>
+<br/>
+
+<div class="d-flex justify-content-center">
+
+<div *ngIf='a'>
+
+    <form>
+    
+    <table class="table">
+    
+    <tr>
+    
+    <th>Autor</th>
+    <th>Naziv</th>
+    <th>Poseti stranicu knjige</th>
+    
+    </tr>
+    
+    
+    
+    <tr *ngFor='let element of foundBooks' [class.request]='element.request==true' >
+    
+      <td >{{element.authors}}</td>
+      <td> {{element.name}}</td>
+      
+         <td><input type="submit" value="INFO" style="width: 200px;" (click)='goToBookPage(element)'></td>
+    
+     
+    
+    
+    
+    
+    
+    </tr>
+    
+
+    
+    
+    
+    </table>
+    
+        
+    </form>
+    
+    </div>
+
+    <div *ngIf='!a' style="color: red;">
+
+      {{poruka}}
+  
+    
+    </div>
+
+</div>
+
+
+<br/>
+
+<br/>
+
+
+
+<div class="d-flex justify-content-center">
+
+
+  <form>
+
+<table class="table">
+
+<tr><td><h1> Pretrazi korisnika</h1></td></tr>
+
+
+<tr>
+  <td>
+    Korisnicko ime
+  </td>
+  <td><input type="text" name="username" [(ngModel)]='userSearchUsername' style='width: 300px;'></td>
+</tr>
+
+<tr>
+  <td>
+    Ime
+  </td>
+  <td><input type="text" name="name" [(ngModel)]='userSearchName' style='width: 300px;'></td>
+</tr>
+
+<tr>
+  <td>
+    Prezime
+  </td>
+  <td><input type="text" name="surname" [(ngModel)]='userSearchSurname' style='width: 300px;'></td>
+</tr>
+
+<tr>
+  <td>
+    Email
+  </td>
+  <td><input type="text" name="email" [(ngModel)]='userSearchEmail' style='width: 300px;'></td>
+</tr>
+
+<tr> <td><input type="submit" value="Pretrazi" (click)="searchUser()"></td></tr>
+
+</table>
+
+
+
+
+
+  </form>
+</div>
+  <br/>
+  <br/>
+  <div class="d-flex justify-content-center">
+
+ <form>
+
+
+  <table class="table">
+
+<tr *ngFor="let element of foundUsers">
+  
+  <td> {{element.username}} </td>
+  <td><input type="submit" value="Idi na profil" (click)="seeProfile(element)"></td>
+</tr>
+
+
+
+
+  </table>
+ </form> 
+
+
+</div>
+
+<div *ngIf='l' style="color: green;">
+  {{porukaSearchUser}}
+</div>
+<div *ngIf='!l' style="color: red;">
+  {{porukaSearchUser}}
+</div>
+
+
+<br/>
+<br/>
+
+<div class="d-flex justify-content-start">
+  
+    <form>
+
+        <table class="table">
+
+  <tr>  <td><input type="submit" value='Prikazi knjige koje citam' (click)="showReadingBooks()" style="width:400px">
+  </td>
+</tr>
+
+   <div *ngIf="h1">
+       
+
+    
+        
+        
+        <tr>
+        
+        <th>Autor</th>
+        <th>Naziv</th>
+  
+        
+        </tr>
+        
+        
+        
+        <tr *ngFor='let element of readingBooks' >
+        
+          <td >{{element.authors}}</td>
+          <td> {{element.name}}</td>
+          
+           
+        
+         
+        
+        
+        
+        
+        
+        </tr>
+        
+        
+
+        
+      
+
+   </div> 
+
+   <br/>
+
+
+   <tr> <td> <input type="submit" value='Prikazi knjige koje hocu da procitam' (click)="showBooksToRead()" style="width:400px">
+   </td>
+  </tr>
+   
+   
+      <div *ngIf="h2">
+          
+   
+       
+           
+           
+           <tr>
+           
+           <th>Autor</th>
+           <th>Naziv</th>
+     
+           
+           </tr>
+           
+           
+           
+           <tr *ngFor='let element of booksToRead' >
+           
+             <td >{{element.authors}}</td>
+             <td> {{element.name}}</td>
+             <td><input type="submit" value="Izbaci iz liste za citanje" (click)='removeFromToReadList(element)'></td>
+              
+           
+            
+           
+           
+           
+           
+           
+           </tr>
+           
+           
+   
+           
+         
+   
+      </div> 
+   
+      <br/>
+
+
+   
+   
+   <tr> <td><input type="submit" value='Prikazi procitane' (click)="showFinishedBooks()" style="width:400px">
+   </td> 
+  </tr>
+   
+   
+      <div *ngIf="h3">
+          
+   
+       
+           
+           
+           <tr>
+           
+           <th>Autor</th>
+           <th>Naziv</th>
+     
+           
+           </tr>
+           
+           
+           
+           <tr *ngFor='let element of booksFinished' >
+           
+             <td >{{element.authors}}</td>
+             <td> {{element.name}}</td>
+             
+              
+           
+            
+           
+           
+           
+           
+           
+           </tr>
+           
+           
+           
+          
+          
+           
+         
+   
+      </div> 
+   
+      <br/>
+    
+      <tr>
+
+
+        <td>
+          <input type="submit" value="Imate {{user.notifications.length}} novih obavestenja" style="width: 400px;" (click)="showNotifications()">
+        </td>
+      </tr>
+
+
+      <tr *ngFor="let element of user.notifications;let i=index" >
+
+        <td *ngIf="notificationsBool">{{element}}  <input type="submit" value="Oznaci procitano" (click)="eraseNotification(i)"></td>
+
+
+      </tr>
+   
+<br/>
+
+      <tr>
+        <td><input type="submit" value="Napravi desavanje" (click)="showMakeHappening()" style="width: 400px;"></td>
+        
+        
+            </tr>
+
+            <div *ngIf="happeningBool">
+
+
+<tr><td>Naziv</td>
+<td><input type="text" name="happeningName" [(ngModel)]="happening.name" style="width: 200px;"> <span style="color: red; font-weight: bold; font-size: x-large;">*</span></td>
+</tr>
+
+
+<tr><td>Datum pocetka</td>
+  <td><input type="date" name="happeningDateBegin" [(ngModel)]="happening.dateBegin" style="width: 200px;"></td>
+  </tr>
+
+  <tr><td>Datum kraja</td>
+    <td><input type="date" name="happeningDateEnd" [(ngModel)]="happening.dateEnd" style="width: 200px;"></td>
+    </tr>
+
+    <tr *ngIf="user.userType=='moderator'"><td>Tip</td>
+      <td *ngIf="user.userType=='moderator'"><input type="radio" name="happeningPrivate" value="privatno" [(ngModel)]="happeningType" style="width: 200px;">Privatno</td>
+      <td *ngIf="user.userType=='moderator'"><input type="radio" name="happeningPublic" value="javno" [(ngModel)]="happeningType" style="width: 200px;">Javno</td>
+    </tr>
+
+    <tr>
+      <td>Aktivan</td>
+      <td><input type="checkbox" name='aktivan' [(ngModel)]='happening.active'></td>
+    </tr>
+
+    <tr>
+      <td>Nema definisan kraj</td>
+      <td><input type="checkbox" name='kraj' [(ngModel)]='happening.noEnd'></td>
+    </tr>
+
+
+      <tr><td>Opis</td>
+        <td><textarea name="happeningName" [(ngModel)]="happening.description" style="width: 200px;"></textarea> <span style="color: red; font-weight: bold; font-size: x-large;">*</span></td>
+        </tr>
+
+
+        <tr>
+          
+          <td>Dodajte korisnike</td>
+          <td>
+       <select name="kor" [(ngModel)]="happening.followers"  style="width:200px"multiple>
+
+          <option *ngFor="let element of users" >
+            
+            {{element.username}} 
+            
+          </option>
+
+        </select>
+      </td>
+         
+      </tr>
+      <tr>
+
+        <td><input type="submit" value="Napravi" (click)="makeHappening()"></td>
+      </tr>
+      
+      </div>
+        
+<tr *ngIf='u' style="color:green">
+
+  <td>{{porukaHappening}}</td>
+
+
+</tr>
+
+<tr *ngIf='!u' style="color:red">
+
+  <td>{{porukaHappening}}</td>
+
+
+</tr>
+
+
+
+
+<br/>
+
+<tr>
+<td><input type="submit" value="Vidi sve dogadjaje" style="width:400px" (click)="seeAllHappenings()"></td>
+
+</tr>
+<br/>
+<br/>
+<tr>
+  <td><input type="submit" value="Dodaj knjigu" (click)="showAddBook()" style="width: 400px;"></td>
+</tr>
+
+<div *ngIf='addBookBool'>
+
+  <tr>
+    
+    
+    <td>Naslov</td>
+    
+    <td><input type='text' name='name' [(ngModel)]='book.name' style="width: 300px;"> <span style="color: red; font-weight: bold; font-size: x-large;">*</span>  </td>
+    
+     </tr>
+    
+   
+     <tr>
+    
+    
+      <td>Autori</td>
+      
+      <td><input type='text' name='autori' [(ngModel)]='authors' style="width: 300px;"> <span style="color: red; font-weight: bold; font-size: x-large;">*</span> </td>
+      
+      
+      </tr>
+    
+    
+    
+      <tr>
+    
+        <td> Naslovna strana</td>
+        
+        <td> <input type="file" file-Model="file.upload" (change)="onFileSelected($event.target.files)" style="width:300px" >  </td>
+        
+        </tr>
+    
+      
+        <tr>
+
+
+          <td>Zanrovi</td>
+          
+          <td> 
+              
+              <select name='zanr' [(ngModel)]='bookGanres'style="width: 300px;" multiple>
+              <option *ngFor="let element of ganres"> {{element.name}}</option>
+    
+    
+           </select>
+           <span style="color: red; font-weight: bold; font-size: x-large;">*</span>
+          </td>
+          
+          
+          </tr>
+    
+    
+            <tr>
+    
+              <td> Opis</td>
+              
+              <td><textarea name='opis'  [(ngModel)]='book.description' style="width: 300px;"></textarea>  </td>
+              
+              
+              </tr>
+    
+                <tr>
+    
+    
+                    <td> Datum izdavanja</td>
+    
+                    <td><input type="date" name="datum" [(ngModel)]="book.date" style="width: 300px;"><span style="color: red; font-weight: bold; font-size: x-large;">*</span> </td>
+    
+    
+                </tr>
+              
+
+  <tr>
+      <td>Broj strana knjige</td>
+      <td><input type="text" name="pages" [(ngModel)]='book.pages' style="width: 300px;"></td>
+
+  </tr>
+    
+        
+             
+    
+    <br/>
+
+
+
+
+    <br/>
+    
+    <tr >
+    
+        <td><input type='submit' value="Dodaj" (click)='addBook()'></td>
+    </tr>
+    
+    
+    <br/>
+
+    
+    <div *ngIf='k' style="color: green;">
+
+      {{porukaAddBook}}
+    
+    
+    </div>
+
+    <div *ngIf='!k' style="color: red;">
+
+      {{porukaAddBook}}
+    
+    
+    </div>
+
+
+</div>
+
+<tr *ngIf="user.userType=='moderator'">
+   <td>
+     <input type="submit" value="Prihvati zahteve za knjige" style="width: 400px;" (click)="showBookRequests()">
+   </td>
+</tr>
+
+
+<div *ngIf='showBookRequestsBool'>
+
+  <tr *ngFor='let element of books'>
+
+      <td *ngIf='element.request'>{{element.name}}</td>
+
+
+      <div class="d-flex justify-content-center">
+     <td *ngIf='element.request'>   <input type='submit' value='Prihvati knjigu'  (click)='acceptBookRequest(element)'>  </td>
+      </div>
+  </tr>
+
+
+</div>
+
+<tr>
+
+
+  <td>
+    <input type="submit" value="Izloguj se" style="width:400px;" (click)="logout()">
+  </td>
+</tr>
+
+
+</table>
+
+
+      
+</form>
+
+
+</div>
+
+
+
+
+    
+    
+    </div>
+    
+    <br/>
+    <br/>
+    
+
+  
+     
+     
+
+   
+        <footer>
+        
+        
+          </footer>
+        
+    
+
+</body>
+</html>
+

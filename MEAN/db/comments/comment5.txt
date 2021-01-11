@@ -1,0 +1,9 @@
+{
+    "_id" : ObjectId("5f4ab7e58fcf905cd888197b"),
+    "comment" : "Sport je super!",
+    "username" : "zika",
+    "idBook" : 1,
+    "id" : 6,
+    "__v" : 0,
+    "type" : "event"
+}

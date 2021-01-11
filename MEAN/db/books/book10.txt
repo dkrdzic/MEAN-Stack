@@ -1,0 +1,18 @@
+{
+    "_id" : ObjectId("5f4baaf0a312e9464c2ea96b"),
+    "authors" : [ 
+        "Branko Copic"
+    ],
+    "ganres" : [ 
+        "roman"
+    ],
+    "name" : "Basta slezove boje",
+    "date" : "2020-08-10",
+    "id" : 9,
+    "request" : true,
+    "coverImage" : "http://localhost:4000/uploads/generic.jpg",
+    "rating" : 0,
+    "n" : 0,
+    "pages" : 100,
+    "__v" : 0
+}

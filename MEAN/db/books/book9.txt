@@ -1,0 +1,19 @@
+{
+    "_id" : ObjectId("5f4b8c60cd977f41c471fa49"),
+    "authors" : [ 
+        "Agata Kristi"
+    ],
+    "ganres" : [ 
+        "roman"
+    ],
+    "name" : "Robinzon Kruso",
+    "description" : "Pusto ostrvo",
+    "date" : "2020-08-07",
+    "id" : 8,
+    "request" : false,
+    "pages" : 500,
+    "coverImage" : "http://localhost:4000/uploads/generic.jpg",
+    "rating" : 0,
+    "n" : 0,
+    "__v" : 0
+}

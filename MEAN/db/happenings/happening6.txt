@@ -1,0 +1,15 @@
+{
+    "_id" : ObjectId("5f4a9c958fcf905cd8881934"),
+    "followers" : [ 
+        "mare"
+    ],
+    "active" : true,
+    "noEnd" : true,
+    "name" : "Horor",
+    "dateBegin" : "2020-08-03",
+    "description" : "Vece horor pric",
+    "type" : "privatno",
+    "creator" : "pera",
+    "id" : 6,
+    "__v" : 0
+}

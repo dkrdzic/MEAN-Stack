@@ -1,0 +1,30 @@
+{
+    "_id" : ObjectId("5f47b7d59cbef25e70ec976e"),
+    "booksToRead" : [],
+    "booksReading" : [],
+    "booksFinished" : [],
+    "following" : [],
+    "notifications" : [ 
+        "Korisnik mare vas je dodao u svoj dogadjaj Sport", 
+        "Korisnik mare vas je dodao u svoj dogadjaj Ljubavno vece", 
+        "Korisnik pera vas je dodao u svoj dogadjaj Krimi vece", 
+        "Korisnik majaje postavio komentra o dogadjaju Sport koga pratite ", 
+        "Korisnik majaje postavio komentra o dogadjaju Sport koga pratite ", 
+        "Korisnik majaje postavio komentra o dogadjaju Sport koga pratite ", 
+        "Korisnik majaje postavio komentra o dogadjaju Krimi vece koga pratite ", 
+        "Korisnik majaje postavio komentra o dogadjaju Krimi vece koga pratite ", 
+        "Korisnik majaje postavio komentra o dogadjaju Krimi vece koga pratite ", 
+        "Korisnik majaje postavio komentra o dogadjaju Sport koga pratite "
+    ],
+    "name" : "Maja",
+    "surname" : "Majic",
+    "username" : "maja",
+    "password" : "Maja123$",
+    "birthday" : "1997-05-19",
+    "city" : "Beograd",
+    "country" : "Srbija",
+    "email" : "maja@gmail.com",
+    "userType" : "korisnik",
+    "profileImage" : "http://localhost:4000/uploads/maja.jpg",
+    "__v" : 0
+}

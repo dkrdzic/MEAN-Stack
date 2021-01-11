@@ -1,0 +1,26 @@
+{
+    "_id" : ObjectId("5f47d2e4ad3dfa4f1c23a668"),
+    "booksToRead" : [],
+    "booksReading" : [ 
+        1
+    ],
+    "booksFinished" : [],
+    "following" : [],
+    "notifications" : [ 
+        "Korisnik zikaje postavio komentra o dogadjaju Sport koga pratite ", 
+        "Korisnik zikaje postavio komentra o dogadjaju Sport koga pratite ", 
+        "Korisnik zikaje postavio komentra o dogadjaju Sport koga pratite ", 
+        "Korisnik zikaje postavio komentra o dogadjaju Sport koga pratite "
+    ],
+    "name" : "Zivojin",
+    "surname" : "Zivic",
+    "username" : "zika",
+    "password" : "Zika123$",
+    "birthday" : "1994-08-16",
+    "city" : "Nis",
+    "country" : "Srbija",
+    "email" : "zika@gmail.com",
+    "userType" : "korisnik",
+    "profileImage" : "http://localhost:4000/uploads/generic.jpg",
+    "__v" : 0
+}

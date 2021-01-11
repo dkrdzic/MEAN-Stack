@@ -1,0 +1,49 @@
+#commentUser:hover{
+
+    color:blue;
+    cursor: pointer;
+
+}
+
+
+
+footer {
+    background-color:lightgray;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.row {
+    height: 50px;
+    background-color: lightgray;
+    width:100%;
+
+     
+    overflow: hidden;
+    position: absolute;
+}
+
+
+
+.link:link, .link:visited {
+    background-color: lightgrey;
+    color: white;
+   font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    
+    
+  }
+  
+
+  .link:hover, .link:active {
+    background-color: gold;
+  }
+
+td,th{
+    font-size:20px;
+}

@@ -1,0 +1,19 @@
+{
+    "_id" : ObjectId("5f4a9b488fcf905cd8881924"),
+    "followers" : [ 
+        "pera", 
+        "mare", 
+        "maja", 
+        "zika", 
+        "mara", 
+        "dare"
+    ],
+    "active" : true,
+    "noEnd" : true,
+    "name" : "Sport",
+    "description" : "Sportsko knjizevno vece",
+    "type" : "privatno",
+    "creator" : "mare",
+    "id" : 1,
+    "__v" : 0
+}

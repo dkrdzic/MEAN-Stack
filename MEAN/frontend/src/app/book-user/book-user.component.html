@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+  <title>BOOKS</title>
+</head>
+<body>
+  
+  <div class="container-fluid">
+
+   
+    <div class="row" >
+    
+  
+    
+    
+    <div class="col-lg-6">
+    
+      <a class="link" routerLink="">
+        Home
+    
+      </a>
+    
+    </div>
+    
+    
+    
+    
+    
+    </div>
+    
+    <br/>
+    <br/>
+    <br/>
+<br/>
+
+    <img src='{{book.coverImage}}' style="width:200px;height:200px">
+
+    <br/>
+    <br/>
+
+
+
+    <div class="d-flex justify-content-center">
+
+
+     
+
+<table class='table'>
+
+  
+<tr>
+<th>Naziv knige:</th>
+<td>{{book.name}}</td>
+
+</tr>
+
+  
+<tr>
+    <th>Autor(i):</th>
+    <td *ngFor='let element of book.authors'>{{element}}</td>
+    
+    </tr>
+
+    <tr>
+        <th>Datum izdavanja:</th>
+        <td>{{book.date}}</td>
+        
+        </tr>
+
+
+        <tr>
+            <th>Zanr(ovi):</th>
+            <td *ngFor='let element of book.ganres'>{{element}}</td>
+            
+            </tr>
+
+            <tr *ngIf="book.description">
+                <th>Opis:</th>
+                <td>{{book.description}}</td>
+                
+                </tr>
+
+                <tr *ngIf="book.rating">
+                    <th>Ocena:</th>
+                    <td>{{book.rating}}</td>
+                    
+                    </tr>
+
+
+                 
+
+
+                   
+
+</table>
+
+
+
+
+
+
+
+</div>
+
+
+<br/>
+
+<br/>
+
+
+
+
+<table class="table">
+
+  <tr>
+    <th *ngIf='!book.request'> Komentari:</th>
+   </tr>
+
+   <tr *ngFor='let element of allComments'>
+
+     <td id="commentUser" *ngIf='element.idBook==book.id && element.type=="book"' (click)='seeProfile(element.username)'>{{element.username}}:</td>
+     <td *ngIf='element.idBook==book.id && element.type=="book"'>{{element.comment}}</td>
+     <td *ngIf='element.idBook==book.id && element.username==user.username && element.type=="book"'>
+       <input type="submit" value='Promeni komentar' (click)="showChangeComment(element)" style="width: 200px;">
+     </td>
+
+
+     <td *ngIf='element.idBook==book.id && element.username==user.username && element.type=="book"'>
+      <input type="submit" value='Obrisi komentar' (click)="deleteComment(element)" style="width: 200px;">
+    </td>
+
+ 
+  
+    
+
+   </tr>
+
+   <tr *ngIf='changeCommentBool'>
+
+    <td >
+      <textarea name="updatecomment" [(ngModel)]="updateComment">
+    
+      </textarea>  
+    </td>
+
+    <td >
+      <input type="submit" value="Promeni" (click)="changeComment()"> 
+    </td>
+
+
+   </tr>
+
+
+   <tr>
+    <th > Ocene:</th>
+   </tr>
+
+   <tr *ngFor='let element of allRatings'>
+
+     <td id="commentUser" *ngIf='element.bookId==book.id' (click)="seeProfile(element.username)" >{{element.username}}:</td>
+     <td *ngIf='element.bookId==book.id'>{{element.note}}</td>
+
+     
+
+   </tr>
+
+
+
+
+
+
+</table>
+
+
+<br/>
+<br/>
+<br/>
+
+<div class="d-flex justify-content-start">
+
+<table class="table">
+
+
+
+<tr>
+
+<td>
+
+<div *ngIf='!book.request'>
+<input type="submit" id="button1" value="Ubaci u listu citanja" style="width: 300px;" (click)='toReadList()' >
+</div>
+
+
+</td>
+
+</tr>
+
+
+<tr>
+
+  <td *ngIf='!book.request'>
+  <input type="submit" value="Izbaci iz liste citanja" style="width: 300px;" (click)='removeFromToReadList()'>
+  </td>
+  
+  </tr>
+
+
+
+  <tr *ngIf='!book.request'>
+
+    <td>
+    <input type="submit" value="Trenutno citam" style="width: 300px;" (click)="readingList()" >
+    </td>
+    
+    </tr>
+  
+
+    <tr *ngIf='!book.request'>
+
+      <td>
+      <input type="submit" value="Procitano" style="width: 300px;"(click)="bookFinished()" >
+      </td>
+      
+      </tr>
+
+
+<tr *ngIf='!book.request'>
+
+<td><input type="submit" value="Unesite procitane strane" (click)='showPagesInput()' style='width: 300px;'></td>
+
+</tr>
+
+<tr *ngIf='pagesBool'>
+
+  <td>
+    <input type="text" name='pages' [(ngModel)]='pages' style='width: 50px;' placeholder="{{currentPage.page}}">/{{this.book.pages}}
+  </td>
+<td><input type="submit" value="Unesi" (click)="inputPages()"></td>
+</tr>
+
+
+
+<tr *ngIf='!book.request'>
+
+  <td> <input type="submit" value="Ostavi komentar" (click)='showMakeComment()' style="width: 300px;"></td>
+
+
+
+</tr>
+
+
+
+
+
+
+
+<tr *ngIf='commentBool'>
+
+  <td><textarea name="comment" [(ngModel)]='newComment.comment'>   </textarea></td>
+
+  <td><input type="submit" value="Unesi" (click)='makeComment()' style="width: 300px;"></td>
+
+</tr>
+
+
+
+<tr *ngIf='!book.request'>
+
+  <td> <input type="submit" value="Oceni" (click)='showRate()' style="width: 300px;"></td>
+
+
+
+</tr>
+
+
+<tr *ngIf="rateBool"> 
+
+<td >
+  <div class="rating" *ngIf="star1==null">
+  <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (click)="checkStar8()">☆</span><span (click)="checkStar7()">☆</span><span (click)="checkStar6()">☆</span>
+  <span (click)="checkStar5()">☆</span><span (click)="checkStar4()">☆</span><span (click)="checkStar3()">☆</span><span (click)="checkStar2()">☆</span><span (click)="checkStar1()" >☆</span>
+  </div>
+
+  <div class="rating" *ngIf="star1==1 && star2==null">
+    <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (click)="checkStar8()">☆</span><span (click)="checkStar7()">☆</span><span (click)="checkStar6()">☆</span>
+    <span (click)="checkStar5()">☆</span><span (click)="checkStar4()">☆</span><span (click)="checkStar3()">☆</span><span (click)="checkStar2()">☆</span><span class="star1" (click)="checkStar1()" >★</span>
+    </div>
+  
+    <div class="rating" *ngIf="star1==1 && star2==2 && star3==null">
+      <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (click)="checkStar8()">☆</span><span (click)="checkStar7()">☆</span><span (click)="checkStar6()">☆</span>
+      <span (click)="checkStar5()">☆</span><span (click)="checkStar4()">☆</span><span (click)="checkStar3()">☆</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+      </div>
+
+
+      <div class="rating" *ngIf="star1==1 && star2==2 && star3==3 && star4==null">
+        <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (click)="checkStar8()">☆</span><span (click)="checkStar7()">☆</span><span (click)="checkStar6()">☆</span>
+        <span (click)="checkStar5()">☆</span><span (click)="checkStar4()">☆</span><span class="star3" (click)="checkStar3()">★</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+        </div>
+    
+
+        
+      <div class="rating" *ngIf="star1==1 && star2==2 && star3==3 && star4==4 && star5==null">
+        <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (click)="checkStar8()">☆</span><span (click)="checkStar7()">☆</span><span (click)="checkStar6()">☆</span>
+        <span (click)="checkStar5()">☆</span><span class="star4"(click)="checkStar4()">★</span><span class="star3" (click)="checkStar3()">★</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+        </div>
+
+
+        <div class="rating" *ngIf="star1==1 && star2==2 && star3==3 && star4==4 && star5==5 && star6==null">
+          <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (click)="checkStar8()">☆</span><span (click)="checkStar7()">☆</span><span (click)="checkStar6()">☆</span>
+          <span class="star5" (click)="checkStar5()">★</span><span class="star4"(click)="checkStar4()">★</span><span class="star3" (click)="checkStar3()">★</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+          </div>
+  
+
+          <div class="rating" *ngIf="star1==1 && star2==2 && star3==3 && star4==4 && star5==5 && star6==6 && star7==null">
+            <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (click)="checkStar8()">☆</span><span (click)="checkStar7()">☆</span><span class="star6" (click)="checkStar6()">★</span>
+            <span class="star5" (click)="checkStar5()">★</span><span class="star4"(click)="checkStar4()">★</span><span class="star3" (click)="checkStar3()">★</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+            </div>
+
+
+            <div class="rating" *ngIf="star1==1 && star2==2 && star3==3 && star4==4 && star5==5 && star6==6 && star7==7 && star8==null">
+              <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (click)="checkStar8()">☆</span><span (click)="star7"(click)="checkStar7()">★</span><span class="star6" (click)="checkStar6()">★</span>
+              <span class="star5" (click)="checkStar5()">★</span><span class="star4"(click)="checkStar4()">★</span><span class="star3" (click)="checkStar3()">★</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+              </div>
+  
+              <div class="rating" *ngIf="star1==1 && star2==2 && star3==3 && star4==4 && star5==5 && star6==6 && star7==7 && star8==8 && star9==null">
+                <span (click)="checkStar10()" >☆</span><span (click)="checkStar9()">☆</span><span (class)="star8" (click)="checkStar8()">★</span><span (click)="star7"(click)="checkStar7()">★</span><span class="star6" (click)="checkStar6()">★</span>
+                <span class="star5" (click)="checkStar5()">★</span><span class="star4"(click)="checkStar4()">★</span><span class="star3" (click)="checkStar3()">★</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+                </div>
+    
+                <div class="rating" *ngIf="star1==1 && star2==2 && star3==3 && star4==4 && star5==5 && star6==6 && star7==7 && star8==8 && star9==9 && star10==null">
+                  <span (click)="checkStar10()" >☆</span><span (class)="9" (click)="checkStar9()">★</span><span (class)="star8" (click)="checkStar8()">★</span><span (click)="star7"(click)="checkStar7()">★</span><span class="star6" (click)="checkStar6()">★</span>
+                  <span class="star5" (click)="checkStar5()">★</span><span class="star4"(click)="checkStar4()">★</span><span class="star3" (click)="checkStar3()">★</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+                  </div>
+      
+                  <div class="rating" *ngIf="star1==1 && star2==2 && star3==3 && star4==4 && star5==5 && star6==6 && star7==7 && star8==8 && star9==9 && star10==10">
+                    <span class="star10" (click)="checkStar10()" >★</span><span (class)="9" (click)="checkStar9()">★</span><span (class)="star8" (click)="checkStar8()">★</span><span (click)="star7"(click)="checkStar7()">★</span><span class="star6" (click)="checkStar6()">★</span>
+                    <span class="star5" (click)="checkStar5()">★</span><span class="star4"(click)="checkStar4()">★</span><span class="star3" (click)="checkStar3()">★</span><span class="star2" (click)="checkStar2()">★</span><span class="star1" (click)="checkStar1()" >★</span>
+                    </div>
+
+
+
+                    <input type="submit" value="Oceni" (click)="rate()">
+</td>
+
+
+
+</tr>
+
+
+
+
+
+
+
+<tr>
+
+<td><input type="submit" value="Vrati se na profil" (click)="goToUser()" style="width:300px"></td>
+
+
+</tr>
+
+
+
+</table>
+
+
+
+
+</div>
+
+<br/>
+
+<br/>
+
+
+
+
+<div *ngIf='a' style="color: green;">
+
+  {{poruka}}
+
+
+</div>
+
+
+<div *ngIf='!a' style="color: red;">
+
+  {{poruka}}
+
+
+</div>
+
+
+
+
+
+    
+    </div>
+    
+    
+ 
+   
+
+   
+      <footer>
+      
+      
+        </footer>
+      
+
+      
+
+
+
+</body>
+</html>
+

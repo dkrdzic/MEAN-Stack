@@ -1,0 +1,9 @@
+{
+    "_id" : ObjectId("5f4cbe9d57766f344c7106f3"),
+    "comment" : "a",
+    "username" : "dare",
+    "idBook" : 1,
+    "id" : 20,
+    "type" : "book",
+    "__v" : 0
+}

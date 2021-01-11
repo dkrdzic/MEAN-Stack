@@ -1,0 +1,34 @@
+{
+    "_id" : ObjectId("5f47b7d59cbef25e70ec976c"),
+    "booksToRead" : [],
+    "booksReading" : [ 
+        0, 
+        1
+    ],
+    "booksFinished" : [ 
+        3
+    ],
+    "following" : [ 
+        "dukak"
+    ],
+    "notifications" : [ 
+        "Korisnik mareje postavio komentra o dogadjaju Krimi vece koga pratite ", 
+        "Vas zahtev za pracenje dogadjaja Horor je prihvacen!", 
+        "Korisnik mare vas je dodao u svoj dogadjaj Muzika", 
+        "Korisnik mare vas je dodao u svoj dogadjaj Avantura", 
+        "Korisnik mare vas je dodao u svoj dogadjaj Nauka", 
+        "Korisnik mareje postavio komentra o dogadjaju Sport koga pratite "
+    ],
+    "name" : "Marko",
+    "surname" : "Markovic",
+    "username" : "mare",
+    "password" : "Mare123$",
+    "birthday" : "2020-08-04",
+    "city" : "Beograd",
+    "country" : "Srbija",
+    "email" : "mare@gmail.com",
+    "userType" : "korisnik",
+    "profileImage" : "http://localhost:4000/uploads/mare.jpg",
+    "__v" : 0,
+    "followHappeningRequests" : []
+}

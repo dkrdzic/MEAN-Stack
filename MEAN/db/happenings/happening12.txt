@@ -1,0 +1,14 @@
+{
+    "_id" : ObjectId("5f4cbb6957766f344c7106dc"),
+    "followers" : [ 
+        "mare"
+    ],
+    "active" : true,
+    "noEnd" : true,
+    "name" : "Avantura",
+    "description" : "Vece avanture",
+    "type" : "privatno",
+    "creator" : "mare",
+    "id" : 12,
+    "__v" : 0
+}

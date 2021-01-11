@@ -1,0 +1,22 @@
+ZA BACKEND u terminalu:
+
+1. npm init -y (json file)
+2. npm install --save-dev babel-cli babel-preset-env
+3. npm install --save-dev @babel/core @babel/preset-env
+4. type nul >> .babelrc i napisemo u dokumentu sta treba 
+
+5. npm install --save-dev babel-watch
+6. u package-json u scripts dodamo "dev":"babel-watch server.js"
+7. npm install express
+8. npm install mongoose
+9 npm install cors
+10. npm install --save multer
+11.npm install nodemailer
+12. npm install --save path
+13. npm install --save-dev @babel/plugin-transform-runtime
+14. npm install --save-dev @babel/preset-react
+15. komanda za start servera: npm run dev
+
+
+
+

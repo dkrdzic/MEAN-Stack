@@ -1,0 +1,14 @@
+{
+    "_id" : ObjectId("5f2a87da7ef7e472686aadda"),
+    "name" : "Dusan",
+    "surname" : "Krdzic",
+    "username" : "dukak",
+    "password" : "Duka123$",
+    "birthday" : "1997-09-21",
+    "city" : "Beograd",
+    "country" : "Srbija",
+    "email" : "dukak97@gmail.com",
+    "userType" : "moderator",
+    "profileImage" : "http://localhost:4000/uploads/dukak.jpg",
+    "__v" : 0
+}

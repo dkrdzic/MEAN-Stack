@@ -1,0 +1,5 @@
+{
+    "_id" : ObjectId("5f44d3c2519d921014db3076"),
+    "name" : "nauka",
+    "__v" : 0
+}

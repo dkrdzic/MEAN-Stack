@@ -1,0 +1,6 @@
+{
+    "_id" : ObjectId("5f4b825eb03d3e722d2e4b90"),
+    "username" : "admin",
+    "password" : "admin",
+    "userType" : "admin"
+}

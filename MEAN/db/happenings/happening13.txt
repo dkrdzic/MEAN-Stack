@@ -1,0 +1,14 @@
+{
+    "_id" : ObjectId("5f4cbc5c57766f344c7106df"),
+    "followers" : [ 
+        "mare"
+    ],
+    "active" : true,
+    "noEnd" : true,
+    "name" : "Nauka",
+    "description" : "Vece naucne literature",
+    "type" : "privatno",
+    "creator" : "mare",
+    "id" : 13,
+    "__v" : 0
+}

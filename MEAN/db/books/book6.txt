@@ -1,0 +1,19 @@
+{
+    "_id" : ObjectId("5f47d328ad3dfa4f1c23a66e"),
+    "authors" : [ 
+        "Stevan Sremac"
+    ],
+    "ganres" : [ 
+        "roman", 
+        "drama"
+    ],
+    "name" : "Pop Cira i Pop Soira",
+    "date" : "2020-08-11",
+    "id" : 5,
+    "request" : false,
+    "coverImage" : "http://localhost:4000/uploads/generic.jpg",
+    "pages" : 100,
+    "__v" : 0,
+    "n" : 1,
+    "rating" : 3
+}

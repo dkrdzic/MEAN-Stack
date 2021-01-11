@@ -1,0 +1,24 @@
+{
+    "_id" : ObjectId("5f4cace1db6afc26f030fcd3"),
+    "booksToRead" : [],
+    "booksReading" : [ 
+        1
+    ],
+    "booksFinished" : [],
+    "following" : [],
+    "notifications" : [ 
+        "Vas zahtev za pracenje dogadjaja Sport je prihvacen!"
+    ],
+    "followHappeningRequests" : [],
+    "name" : "Darko",
+    "surname" : "Darkic",
+    "username" : "dare",
+    "password" : "Dare123$",
+    "birthday" : "2020-08-18",
+    "city" : "Vrsac",
+    "country" : "Srbija",
+    "email" : "dare@gmail.com",
+    "userType" : "korisnik",
+    "profileImage" : "http://localhost:4000/uploads/dare.jpg",
+    "__v" : 0
+}

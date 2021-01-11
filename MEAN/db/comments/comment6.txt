@@ -1,0 +1,9 @@
+{
+    "_id" : ObjectId("5f4abc34bf2e1654f40d0db1"),
+    "comment" : "Dolazim obavezno!",
+    "username" : "zika",
+    "idBook" : 1,
+    "id" : 9,
+    "type" : "event",
+    "__v" : 0
+}

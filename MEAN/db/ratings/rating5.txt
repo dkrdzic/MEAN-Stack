@@ -1,0 +1,7 @@
+{
+    "_id" : ObjectId("5f4ba131a312e9464c2ea91b"),
+    "username" : "mara",
+    "bookId" : 1,
+    "note" : 2,
+    "__v" : 0
+}

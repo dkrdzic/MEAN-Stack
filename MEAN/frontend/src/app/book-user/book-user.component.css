@@ -1,0 +1,176 @@
+#commentUser:hover{
+
+    color:gold;
+    cursor: pointer;
+   
+
+    background-color: lightgrey;
+    
+   font-size: 25px;
+   
+ 
+ 
+
+}
+
+
+
+
+footer {
+    background-color:lightgray;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    top:0;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .row {
+    height: 50px;
+    background-color: lightgray;
+    width:100%;
+  
+     
+    overflow: hidden;
+    position: absolute;
+  }
+  
+  
+  
+  
+  .link:link, .link:visited {
+      background-color: lightgrey;
+      color: white;
+     font-size: 25px;
+      text-align: center;
+      text-decoration: none;
+      
+      
+    }
+    
+  
+    .link:hover, .link:active {
+      background-color: gold;
+    }
+  
+  
+    td,th{
+  
+    font-size:20px;
+  
+  
+    }
+
+    .rating {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+      }
+      .rating > span {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+      }
+
+   
+
+
+      .rating > span:hover:before,
+      .rating > span:hover ~ span:before {
+         content: "\2605";
+         position: absolute;
+         
+         
+      }
+
+      .star1 > span:hover:before,
+      .star1 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+     
+         
+      }
+
+      .star2 > span:hover:before,
+      .star2 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+      .star3 > span:hover:before,
+      .star3 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+
+      .star4 > span:hover:before,
+      .star4 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+      .star5 > span:hover:before,
+      .star5 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+
+      
+      .star6 > span:hover:before,
+      .star6 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+
+      
+      .star7 > span:hover:before,
+      .star7 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+      
+      .star8 > span:hover:before,
+      .star8 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+
+      
+      .star9 > span:hover:before,
+      .star9 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+
+      .star10 > span:hover:before,
+      .star10 > span:hover ~ span:before {
+         content: "\9734";
+         position: absolute;
+         
+         
+      }
+
+

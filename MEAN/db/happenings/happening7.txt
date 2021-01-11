@@ -1,0 +1,13 @@
+{
+    "_id" : ObjectId("5f4a9d628fcf905cd8881936"),
+    "followers" : [],
+    "active" : false,
+    "noEnd" : true,
+    "name" : "Helenizam",
+    "dateBegin" : "2020-08-17",
+    "description" : "Vece grckih epova",
+    "type" : "privatno",
+    "creator" : "pera",
+    "id" : 7,
+    "__v" : 0
+}

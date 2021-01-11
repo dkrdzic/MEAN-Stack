@@ -1,0 +1,20 @@
+{
+    "_id" : ObjectId("5f4ca758844f7d3eb8f69f41"),
+    "booksToRead" : [],
+    "booksReading" : [],
+    "booksFinished" : [],
+    "following" : [],
+    "notifications" : [],
+    "followHappeningRequests" : [],
+    "name" : "Jovan",
+    "surname" : "Jovic",
+    "username" : "jova",
+    "password" : "Jova123$",
+    "birthday" : "2020-08-04",
+    "city" : "Nis",
+    "country" : "Srbija",
+    "email" : "jova@gmail.com",
+    "userType" : "gost",
+    "profileImage" : "http://localhost:4000/uploads/jova.jpg",
+    "__v" : 0
+}

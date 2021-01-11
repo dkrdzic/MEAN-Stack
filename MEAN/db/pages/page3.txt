@@ -1,0 +1,7 @@
+{
+    "_id" : ObjectId("5f48f1b31da3973dd0844098"),
+    "username" : "mare",
+    "idBook" : 1,
+    "page" : 150,
+    "__v" : 0
+}

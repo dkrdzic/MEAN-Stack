@@ -1,0 +1,16 @@
+{
+    "_id" : ObjectId("5f48f5031da3973dd084415d"),
+    "authors" : [ 
+        "Nepoznat"
+    ],
+    "ganres" : [ 
+        "ep"
+    ],
+    "name" : "Ep o Gilgamesu",
+    "date" : "2020-08-04",
+    "pages" : 500,
+    "id" : 6,
+    "request" : false,
+    "coverImage" : "http://localhost:4000/uploads/generic.jpg",
+    "__v" : 0
+}

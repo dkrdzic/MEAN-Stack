@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+  <title>LOGIN</title>
+</head>
+<body>
+  
+  <div class="container-fluid">
+
+   
+    <div class="row">
+    
+  
+    
+    <div class="col-lg-6">
+    
+      <a class="link" routerLink="">
+        Home
+    
+      </a>
+    
+    </div>
+    
+    
+    
+    
+    
+    </div>
+    
+    <br/>
+    <br/>
+
+    <div class="d-flex justify-content-center">
+
+
+
+
+<form>
+
+  <table class='table'> 
+
+<tr><th>IZABERI OPCIJU</th></tr>
+
+
+<tr>
+
+    <td><input type="submit" value="Prihvati zahteve korisnika" (click)='showRequests()' style="width:300px"></td>
+
+
+</tr>
+
+
+
+<tr>
+
+  <td><input type="submit" value="Dodeli ili oduzmi privilegiju" (click)='showUsers()' style="width:300px"></td>
+
+
+</tr>
+
+<tr>
+
+  <td><input type="submit" value="Dodaj knjigu" (click)='showBookForm()' style="width:300px"></td>
+
+
+</tr>
+
+
+<tr>
+
+  <td><input type="submit" value="Dodaj zanr" (click)='showGanreForm()' style="width:300px"></td>
+
+
+</tr>
+
+<tr>
+
+  <td><input type="submit" value="Izbrisi zanr" (click)='chooseGanreToDelete()' style="width:300px"></td>
+
+
+</tr>
+
+<tr>
+  <td>
+    <input type="submit" value="Prihvati zahteve za knjige" style="width: 300px;" (click)="showBookRequests()">
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <input type="submit" value="Promeni info o knjigama" style="width: 300px;" (click)="showChangeBookInfo()">
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <input type="submit" value="Izloguj se" style="width:300px;" (click)="logout()">
+  </td>
+</tr>
+
+
+
+
+<br/>
+<br/>
+
+
+
+<div *ngIf='section==1'>
+
+    <tr *ngFor='let element of requestUsers'>
+
+        <td>{{element.username}}</td>
+
+
+        <div class="d-flex justify-content-center">
+       <td>   <input type='submit' value='Prihvati korisnika'  (click)='acceptUser(element)'>  </td>
+        </div>
+    </tr>
+
+
+</div>
+
+
+<div *ngIf='section==2'>
+
+  <tr *ngFor='let element of users'>
+
+
+
+    
+    <div *ngIf="element.userType=='korisnik' && element.userType!='admin'">
+      <td>{{element.username}}</td>
+
+      <div class="d-flex justify-content-center">
+     <td>   <input type='submit' value='Dodeli privilegiju'  (click)='givePrivilege(element)' style="width:200px">  </td>
+  </div>
+    </div>
+  
+    <div *ngIf="element.userType=='moderator' && element.userType!='admin'">
+      <td>{{element.username}}</td>
+
+      <div class="d-flex justify-content-center">
+     <td>   <input type='submit' value='Uzmi privilegiju'  (click)='takePrivilege(element)' style="width:200px">  </td>
+   </div>
+   
+    </div>
+
+  
+
+    </tr>
+
+
+</div>
+
+
+
+<div *ngIf='section==3'>
+
+  <tr>
+    
+    
+    <td>Naslov</td>
+    
+    <td><input type='text' name='name' [(ngModel)]='book.name' style="width: 300px;"> <span style="color: red; font-weight: bold; font-size: x-large;">*</span>  </td>
+    
+     </tr>
+    
+   
+     <tr>
+    
+    
+      <td>Autor(i)</td>
+      
+      <td><input type='text' name='autori' [(ngModel)]='authors' style="width: 300px;"> <span style="color: red; font-weight: bold; font-size: x-large;">*</span> </td>
+      
+      
+      </tr>
+    
+    
+    
+      <tr>
+    
+        <td> Naslovna strana</td>
+        
+        <td> <input type="file" file-Model="file.upload" (change)="onFileSelected($event.target.files)" style="width:300px" >  </td>
+        
+        </tr>
+    
+      
+        <tr>
+
+
+          <td>Zanr(ovi)</td>
+          
+          <td> 
+              
+              <select name='zanr' [(ngModel)]='bookGanres'style="width: 300px;" multiple>
+              <option *ngFor="let element of allGanres"> {{element.name}}</option>
+    
+    
+           </select>
+           <span style="color: red; font-weight: bold; font-size: x-large;">*</span>
+          </td>
+          
+          
+          </tr>
+    
+  
+   
+    
+            <tr>
+    
+              <td> Opis</td>
+              
+              <td><textarea name='opis'  [(ngModel)]='book.description' style="width: 300px;"></textarea>  </td>
+              
+              
+              </tr>
+    
+                <tr>
+    
+    
+                    <td> Datum izdavanja</td>
+    
+                    <td><input type="date" name="datum" [(ngModel)]="book.date" style="width: 300px;"><span style="color: red; font-weight: bold; font-size: x-large;">*</span> </td>
+    
+    
+                </tr>
+              
+
+  <tr>
+      <td>Broj strana knjige</td>
+      <td><input type="text" name="pages" [(ngModel)]='book.pages' style="width: 300px;"></td>
+
+  </tr>
+    
+        
+             
+    
+    <br/>
+    
+    <tr >
+    
+        <td><input type='submit' value="Dodaj" (click)='addBook()'></td>
+    </tr>
+    
+    
+    <br/>
+
+    
+    
+
+
+
+
+</div>
+
+
+
+
+<div *ngIf='section==4'>
+
+ 
+    
+   
+     <tr>
+    
+    
+      <td>Dodajte zanr</td>
+    
+     </tr>
+
+     <tr>
+       
+      <td><input type='text' name='zanr' [(ngModel)]='pendingGanre' style="width: 300px;">  </td>
+    
+      
+
+      </tr>
+    
+    
+    
+       
+    
+    <br/>
+    
+    <tr >
+    
+        <td><input type='submit' value="Dodaj" (click)='addGanre()'></td>
+    </tr>
+    
+    
+    <br/>
+
+    
+
+
+</div>
+
+
+
+
+
+<div *ngIf='section==6'>
+
+ 
+    
+  
+
+  <tr>
+
+
+    <td>Izaberite zanr za brisanje:</td>
+    
+  </tr>
+
+  <tr>
+    <td> 
+        
+        <select name='zanr' [(ngModel)]='ganreToDelete'style="width: 300px;">
+        <option *ngFor="let element of allGanres"> {{element.name}}</option>
+
+
+     </select>
+    
+    </td>
+    
+    
+    </tr> 
+ 
+ <br/>
+ 
+ <tr >
+ 
+     <td><input type='submit' value="Izbrisi" (click)='deleteGanre()'></td>
+ </tr>
+ 
+ 
+ <br/>
+
+ 
+
+
+</div>
+
+
+
+
+
+<div *ngIf='section==8'>
+
+ <tr *ngFor='let element of books'>
+
+     <td *ngIf='element.request'>{{element.name}}</td>
+
+
+     <div class="d-flex justify-content-center">
+    <td *ngIf='element.request'>   <input type='submit' value='Prihvati knjigu'  (click)='acceptBookRequest(element)'>  </td>
+     </div>
+ </tr>
+
+
+</div>
+
+
+<div *ngIf="section==10">
+
+  <tr *ngFor='let element of books'>
+
+    <td>{{element.name}}</td>
+<td>{{element.authors}}</td>
+
+    <div class="d-flex justify-content-center">
+   <td >   <input type='submit' value='Promeni'  (click)='changeBookInfo(element)'>  </td>
+    </div>
+</tr>
+
+</div>
+
+
+
+
+
+<div *ngIf='section==11'>
+  <th>
+    <tr>
+Menjate info o knjizi {{bookToChange.name}} autora {{bookToChange.authors}}
+</tr>
+  </th>
+
+  <tr>
+    
+    
+    <td>Naslov</td>
+    
+    <td><input type='text' name='name' [(ngModel)]='newBookName' style="width: 300px;">   </td>
+    <td><input type="submit" value="Promeni" (click)="changeBookName()"></td>
+     </tr>
+    
+   
+     <tr>
+    
+    
+      <td>Autor(i)</td>
+      
+      <td><input type='text' name='autori' [(ngModel)]='newAuthors' style="width: 300px;">  </td>
+      <td><input type="submit" value="Promeni" (click)="changeBookAuthors()"></td>
+      
+      </tr>
+    
+    
+    
+      <tr>
+    
+        <td> Naslovna strana</td>
+        
+        <td> <input type="file" file-Model="file.upload" (change)="onFileSelected($event.target.files)" style="width:300px" >  </td>
+        <td><input type="submit" value="Promeni" (click)="changeCover()"></td>
+        </tr>
+    
+      
+        <tr>
+
+
+          <td>Zanr(ovi)</td>
+          
+          <td> 
+              
+              <select name='zanr' [(ngModel)]='bookGanres'style="width: 300px;" multiple>
+              <option *ngFor="let element of allGanres"> {{element.name}}</option>
+    
+    
+           </select>
+  
+          </td>
+          <td><input type="submit" value="Promeni" (click)="changeBookGanres()"></td>
+          
+          </tr>
+    
+  
+   
+    
+            <tr>
+    
+              <td> Opis</td>
+              
+              <td><textarea name='opis'  [(ngModel)]='newDescr' style="width: 300px;"></textarea>  </td>
+              <td><input type="submit" value="Promeni" (click)="changeBookDescription()"></td>
+              
+              </tr>
+    
+                <tr>
+    
+    
+                    <td> Datum izdavanja</td>
+    
+                    <td><input type="date" name="datum" [(ngModel)]="newDate" style="width: 300px;"> </td>
+    
+                    <td><input type="submit" value="Promeni" (click)="changeBookDate()"></td>
+                </tr>
+              
+
+  <tr>
+      <td>Broj strana knjige</td>
+      <td><input type="text" name="pages" [(ngModel)]='newPages' style="width: 300px;"></td>
+      <td><input type="submit" value="Promeni" (click)="changeBookPages()"></td>
+  </tr>
+    
+        
+             
+    
+    <br/>
+    
+  
+    <br/>
+
+   
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+</form>
+
+
+
+</div>
+
+
+<div *ngIf='a' style="color: green;">
+
+  {{poruka}}
+
+
+</div>
+
+
+<div *ngIf='!a' style="color: red;">
+
+  {{poruka}}
+
+
+</div>
+
+
+
+
+    
+    
+    
+    </div>
+    
+    
+
+   
+      <footer>
+      
+      
+        </footer>
+      
+    
+
+</body>
+</html>
+

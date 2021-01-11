@@ -1,0 +1,16 @@
+{
+    "_id" : ObjectId("5f4a9c148fcf905cd8881930"),
+    "followers" : [ 
+        "pera", 
+        "mare", 
+        "maja"
+    ],
+    "active" : true,
+    "noEnd" : true,
+    "name" : "Krimi vece",
+    "description" : "Vece krimi literature",
+    "type" : "privatno",
+    "creator" : "pera",
+    "id" : 4,
+    "__v" : 0
+}

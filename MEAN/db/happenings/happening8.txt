@@ -1,0 +1,14 @@
+{
+    "_id" : ObjectId("5f4a9e2f8fcf905cd8881938"),
+    "followers" : [],
+    "active" : false,
+    "noEnd" : false,
+    "name" : "Decije vece",
+    "dateBegin" : "2020-08-04",
+    "dateEnd" : "2020-09-23",
+    "description" : "Vece decije literature",
+    "type" : "javno",
+    "creator" : "pera",
+    "id" : 8,
+    "__v" : 0
+}

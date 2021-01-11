@@ -1,0 +1,14 @@
+{
+    "_id" : ObjectId("5f4a9b978fcf905cd8881926"),
+    "active" : false,
+    "noEnd" : false,
+    "name" : "Poezija",
+    "dateBegin" : "2020-08-03",
+    "dateEnd" : "2020-09-01",
+    "description" : "Vece namenjeno za ljubitelje poezije",
+    "type" : "privatno",
+    "creator" : "mare",
+    "id" : 2,
+    "__v" : 0,
+    "followers" : []
+}

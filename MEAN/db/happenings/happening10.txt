@@ -1,0 +1,12 @@
+{
+    "_id" : ObjectId("5f4bab64a312e9464c2ea96d"),
+    "followers" : [],
+    "active" : true,
+    "noEnd" : true,
+    "name" : "Dokument",
+    "description" : "Vece dokumentaraca",
+    "type" : "privatno",
+    "creator" : "mare",
+    "id" : 10,
+    "__v" : 0
+}

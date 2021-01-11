@@ -1,0 +1,15 @@
+{
+    "_id" : ObjectId("5f4a9c588fcf905cd8881932"),
+    "followers" : [ 
+        "mara", 
+        "dare"
+    ],
+    "active" : true,
+    "noEnd" : true,
+    "name" : "Ruski klasici",
+    "description" : "Forum ljubitelja ruskih klasika",
+    "type" : "javno",
+    "creator" : "pera",
+    "id" : 5,
+    "__v" : 0
+}

@@ -1,0 +1,14 @@
+{
+    "_id" : ObjectId("5f4cbaef57766f344c7106d9"),
+    "followers" : [ 
+        "mare"
+    ],
+    "active" : true,
+    "noEnd" : true,
+    "name" : "Muzika",
+    "description" : "Muzicko vece ",
+    "type" : "privatno",
+    "creator" : "mare",
+    "id" : 11,
+    "__v" : 0
+}

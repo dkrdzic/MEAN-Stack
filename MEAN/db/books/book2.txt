@@ -1,0 +1,19 @@
+{
+    "_id" : ObjectId("5f47bac79cbef25e70ec9783"),
+    "authors" : [ 
+        "Ernest Hemingvej"
+    ],
+    "ganres" : [ 
+        "roman"
+    ],
+    "name" : "Starac i more",
+    "date" : "2020-08-28",
+    "id" : 1,
+    "request" : false,
+    "description" : "Starac sam na moru",
+    "pages" : 200,
+    "coverImage" : "http://localhost:4000/uploads/1.jpg",
+    "__v" : 0,
+    "n" : 4,
+    "rating" : 5
+}
