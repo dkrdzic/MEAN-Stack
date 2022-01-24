@@ -1,10 +1,4 @@
-
-
-
-export class UserEvent{
-
-username:string
-event:number
-
-
+export class UserEvent {
+  username: string;
+  event: number;
 }

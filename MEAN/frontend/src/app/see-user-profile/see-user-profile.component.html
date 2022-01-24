@@ -1,243 +1,152 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
 
+    <title>LOGIN</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <a class="link" routerLink=""> Home </a>
+        </div>
+      </div>
 
+      <br />
+      <br />
 
-  <title>LOGIN</title>
-</head>
-<body>
-  
-  <div class="container-fluid">
+      <br />
+      <br />
 
-   
-    <div class="row">
-  
-    
-    <div class="col-lg-6">
-    
-      <a class="link"  routerLink="">
-        Home
-    
-      </a>
-     
-    
-    </div>
-    
-    
-    
-    
-    
-    </div>
-    
-    <br/>
-    <br/>
+      <div class="d-flex justify-content-start">
+        <img
+          src="{{ user.profileImage }}"
+          style="width: 300px; height: 300px"
+        />
+      </div>
 
-   
-<br/>
-  <br/>
+      <br />
+      <br />
 
+      <table class="table">
+        <tr>
+          <th>Ime:</th>
 
-    <div class="d-flex justify-content-start">
-   
-
-
-       
- <img src='{{user.profileImage}}' style="width:300px;height:300px">
-     
-</div>        
-            
-    <br/>
-<br/>
-
-
-
-<table class="table">
- 
-  
-
-
-
-
-<tr>
-
-<th>
-    Ime:
-</th>
-
-<td>
-    {{user.name}}
-</td>
-
-
-
-</tr>
-
-
-
-
-
-
-<tr>
-
-    <th>
-        Prezime:
-    </th>
-    
-    <td>
-        {{user.surname}}
-    </td>
-    
-   
-
-
-    </tr>
-    
-
-   
-
-
-    <tr>
-
-        <th>
-            Korisnicko ime:
-        </th>
-        
-        <td>
-            {{user.username}}
-        </td>
-        
-    
-        
+          <td>
+            {{ user.name }}
+          </td>
         </tr>
 
+        <tr>
+          <th>Prezime:</th>
 
-
-
-
+          <td>
+            {{ user.surname }}
+          </td>
+        </tr>
 
         <tr>
+          <th>Korisnicko ime:</th>
 
-            <th>
-               Datum rodjenja:
-            </th>
-            
+          <td>
+            {{ user.username }}
+          </td>
+        </tr>
+
+        <tr>
+          <th>Datum rodjenja:</th>
+
+          <td>
+            {{ user.birthday }}
+          </td>
+        </tr>
+
+        <tr>
+          <th>Grad:</th>
+
+          <td>
+            {{ user.city }}
+          </td>
+        </tr>
+
+        <tr>
+          <th>Drzava:</th>
+
+          <td>
+            {{ user.country }}
+          </td>
+        </tr>
+
+        <tr>
+          <th>Email:</th>
+
+          <td>
+            {{ user.email }}
+          </td>
+        </tr>
+      </table>
+
+      <br />
+      <br />
+
+      <form>
+        <table class="table">
+          <tr>
             <td>
-                {{user.birthday}}
+              <input
+                type="submit"
+                value="Zaprati"
+                (click)="follow()"
+                style="width: 300px"
+              />
             </td>
-            
-          
-            
+          </tr>
 
-            
-            </tr>
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="Vrati se na profil"
+                (click)="backToBookPage()"
+                style="width: 300px"
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
 
-         
-        
+    <div *ngIf="a" style="color: green">
+      {{ poruka }}
+    </div>
 
+    <div *ngIf="!a" style="color: red">
+      {{ poruka }}
+    </div>
 
-            <tr>
-
-                <th>
-                   Grad:
-                </th>
-                
-                <td>
-                    {{user.city}}
-                </td>
-           
-                </tr>
-
-
-
-    
-                <tr>
-
-                    <th>
-                      Drzava:
-                    </th>
-                    
-                    <td>
-                        {{user.country}}
-                    </td>
-                
-                    
-                    </tr>
-        
-                 
-
-                    <tr>
-
-                      <th>
-                        Email:
-                      </th>
-                      
-                      <td>
-                          {{user.email}}
-                      </td>
-                      
-                   
-                      </tr>
-
-                        
-</table>
-
-<br/>
-<br/>
-
-<form>
-
-<table class='table'>
-
-<tr>
-
-<td>
-<input type="submit" value="Zaprati" (click)="follow()" style="width: 300px;">
-
-</td>
-
-</tr>
-
-  <tr>
-
-  <td> <input type="submit" value="Vrati se na profil" (click)="backToBookPage()" style="width: 300px;"></td>
-
-  </tr>
-</table>
-
-</form>
- 
-</div>
-
-<div *ngIf='a' style="color:green;">
-
-
-{{poruka}}
-
-</div>
-
-<div *ngIf='!a' style="color:red;">
-  
-
-  {{poruka}}
-  
-  </div>
-  
-
-<footer>
-
-  
-</footer>
-
-
-
-</body>
+    <footer></footer>
+  </body>
 </html>
-

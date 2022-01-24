@@ -1,13 +1,7 @@
+export class Page {
+  _id: any;
 
-
-export class Page{
-
-    _id:any;
- 
-username:string;
-page:number
-idBook:number;
-
-
+  username: string;
+  page: number;
+  idBook: number;
 }
-

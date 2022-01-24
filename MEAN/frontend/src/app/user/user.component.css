@@ -1,36 +1,23 @@
-.request{
-
-    background-color: lightgray;
-    color: gray;
+.request {
+  background-color: lightgray;
+  color: gray;
 }
 
-
-
-#commentUser:hover{
-
-  color:gold;
+#commentUser:hover {
+  color: gold;
   cursor: pointer;
- 
 
   background-color: lightgrey;
-  
- font-size: 25px;
- 
 
-
-
+  font-size: 25px;
 }
 
-
-
-
-
 footer {
-  background-color:lightgray;
+  background-color: lightgray;
   position: relative;
   left: 0;
   bottom: 0;
-  top:0;
+  top: 0;
   height: 50px;
   width: 100%;
   overflow: hidden;
@@ -39,35 +26,27 @@ footer {
 .row {
   height: 50px;
   background-color: lightgray;
-  width:100%;
+  width: 100%;
 
-   
   overflow: hidden;
   position: absolute;
 }
 
+.link:link,
+.link:visited {
+  background-color: lightgrey;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+}
 
+.link:hover,
+.link:active {
+  background-color: gold;
+}
 
-
-.link:link, .link:visited {
-    background-color: lightgrey;
-    color: white;
-   font-size: 25px;
-    text-align: center;
-    text-decoration: none;
-    
-    
-  }
-  
-
-  .link:hover, .link:active {
-    background-color: gold;
-  }
-
-
-  td,th{
-
-  font-size:20px;
-
-
-  }
+td,
+th {
+  font-size: 20px;
+}

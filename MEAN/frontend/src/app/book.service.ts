@@ -1,407 +1,218 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
-import {Book} from './models/book'
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Book } from "./models/book";
 
-
-import { Page } from './models/page';
-import {Comment} from './models/comment'
-import { Rating } from './models/rating';
-
+import { Page } from "./models/page";
+import { Comment } from "./models/comment";
+import { Rating } from "./models/rating";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class BookService {
+  uri = "http://localhost:4000";
 
-  uri="http://localhost:4000";
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-
-
-
-
-  getBooks(){
-
-  return this.http.get(`${this.uri}/books`);
-
-
+  getBooks() {
+    return this.http.get(`${this.uri}/books`);
   }
 
+  addBook(book: Book, img: File) {
+    const formData: FormData = new FormData();
+    if (img != null) formData.append("profileImg", img, img.name);
+    else formData.append("profileImg", img);
 
-addBook(book:Book,img:File){
+    formData.append("book", JSON.stringify(book));
 
-  const formData:FormData=new FormData();
-if (img!=null)
+    return this.http.post(`${this.uri}/addBook`, formData);
 
-
-formData.append('profileImg',img,img.name);
-else formData.append('profileImg',img);
-
-formData.append('book',JSON.stringify(book));
-
-
-
-return this.http.post(`${this.uri}/addBook`,formData);
-
-//return this.http.post(`${this.uri}/registration`,user.img);
-
-
-
-}
-
-
-
-
-
-
-
-getGanres(){
-
-return this.http.get(`${this.uri}/getGanres`);
-
-
-}
-
-
-
-addGanre(ganre){
-
-
-const data={
-
-
-ganre:ganre
-
-
-}
-
-
-return this.http.post(`${this.uri}/addGanre`,data);
-
-
-
-}
-
-
-
-
-deleteGanre(ganre){
-
-
-const data={
-
-
-  ganre:ganre
-}
-
-
-return this.http.post(`${this.uri}/deleteGanre`,data);
-
-
-}
-
-
-
-
-updateBooksLists(user){
-
-
-
-  const data={
-
-    user:JSON.stringify(user)
+    //return this.http.post(`${this.uri}/registration`,user.img);
   }
 
- return this.http.post(`${this.uri}/updateBooksLists`,data);
-
-
-
-}
-
-
-
-updateBookPage(username:string,idBook:number,page:number){
-
-const data={
-
-
-  
-  username:username,
-  idBook:idBook,
-  page:page
-}
-
-
-return this.http.post(`${this.uri}/updateBookPage`,data);
-
-
-}
-
-
-findPages(username:string,idBook:number){
-
-
-  const data={
-
-  username:username,
-  idBook:idBook
-
+  getGanres() {
+    return this.http.get(`${this.uri}/getGanres`);
   }
 
- return this.http.post(`${this.uri}/findPages`,data)
+  addGanre(ganre) {
+    const data = {
+      ganre: ganre,
+    };
 
-
-}
-
-
-makeNewPage(page:Page){
-
-
-  
-  const data={
-
-  page:JSON.stringify(page)
-
+    return this.http.post(`${this.uri}/addGanre`, data);
   }
 
- return this.http.post(`${this.uri}/makeNewPage`,data)
+  deleteGanre(ganre) {
+    const data = {
+      ganre: ganre,
+    };
 
-
-}
-
-
-
-addNewComment(comment:Comment){
-
-const data={
-
-comment:JSON.stringify(comment)
-
-}
-
-return this.http.post(`${this.uri}/addNewComment`,data);
-
-
-
-}
-
-getComments(){
-
-  return this.http.get(`${this.uri}/getComments`);
-
-
+    return this.http.post(`${this.uri}/deleteGanre`, data);
   }
 
+  updateBooksLists(user) {
+    const data = {
+      user: JSON.stringify(user),
+    };
 
-
-deleteComment(comment:Comment){
-
-const data={
-
-  comment:JSON.stringify(comment)
-}
-
-return this.http.post(`${this.uri}/deleteComment`,data)
-
-
-}
-
-
-
-
-changeComment(comment:Comment,updateComment:string){
-
-  const data={
-
-    comment:JSON.stringify(comment),
-    updateComment:updateComment
-  }
-  
-  return this.http.post(`${this.uri}/changeComment`,data)
-  
-
-
-
-}
-
-
-
-
-findBook(id:number){
-
-
-const data={
-
-  id:id
-}
-
-
-
-return this.http.post(`${this.uri}/findBook`,data);
-
-
-}
-
-
-acceptBookRequest(book:Book){
-
-
-console.log(book.name)
-
-  const data={
-  book:JSON.stringify(book)
-  }
-  
-  return this.http.post(`${this.uri}/acceptBookRequest`,data);
-  
-  
+    return this.http.post(`${this.uri}/updateBooksLists`, data);
   }
 
+  updateBookPage(username: string, idBook: number, page: number) {
+    const data = {
+      username: username,
+      idBook: idBook,
+      page: page,
+    };
 
-
-changeBookName(book:Book,name:string){
-
-const data={
-
-  book:JSON.stringify(book),
-  name:name
-}
-
-return this.http.post(`${this.uri}/changeBookName`,data)
-
-
-}
-
-changeBookAuthors(book:Book){
-
-  const data={
-  
-    book:JSON.stringify(book),
-    
-  }
-  
-  return this.http.post(`${this.uri}/changeBookAuthors`,data)
-  
-  
+    return this.http.post(`${this.uri}/updateBookPage`, data);
   }
 
+  findPages(username: string, idBook: number) {
+    const data = {
+      username: username,
+      idBook: idBook,
+    };
 
-  changeCover(book:Book,img:File){
-
-    const formData:FormData=new FormData();
-  if (img!=null)
-  
-  
-  formData.append('profileImg',img,img.name);
-  else formData.append('profileImg',img);
-  
-  formData.append('book',JSON.stringify(book));
-  
-  console.log(book.id)
-  
-  return this.http.post(`${this.uri}/changeCover`,formData);
-  
- 
-  
-  
-  
+    return this.http.post(`${this.uri}/findPages`, data);
   }
-  
-  changeBookGanres(book:Book){
 
-    const data={
-    
-      book:JSON.stringify(book),
-      
-    }
-    
-    return this.http.post(`${this.uri}/changeBookGanres`,data)
-    
-    
-    }
+  makeNewPage(page: Page) {
+    const data = {
+      page: JSON.stringify(page),
+    };
 
-    changeBookDescr(book:Book,newDescr:string){
+    return this.http.post(`${this.uri}/makeNewPage`, data);
+  }
 
-      const data={
-    
-        book:JSON.stringify(book),
-        newDescr:newDescr
-      }
-      
-      return this.http.post(`${this.uri}/changeBookDescr`,data)
-      
-      
-      }
+  addNewComment(comment: Comment) {
+    const data = {
+      comment: JSON.stringify(comment),
+    };
 
-      changeBookDate(book:Book,newDate:string){
+    return this.http.post(`${this.uri}/addNewComment`, data);
+  }
 
-        const data={
-      
-          book:JSON.stringify(book),
-          newDate:newDate
-        }
-        
-        return this.http.post(`${this.uri}/changeBookDate`,data)
-        
-        
-        }
+  getComments() {
+    return this.http.get(`${this.uri}/getComments`);
+  }
 
-   
-        changeBookPages(book:Book,newPages:string){
+  deleteComment(comment: Comment) {
+    const data = {
+      comment: JSON.stringify(comment),
+    };
 
-          const data={
-        
-            book:JSON.stringify(book),
-            newPages:newPages
-          }
-          
-          return this.http.post(`${this.uri}/changeBookPages`,data)
-          
-          
-          }
+    return this.http.post(`${this.uri}/deleteComment`, data);
+  }
 
+  changeComment(comment: Comment, updateComment: string) {
+    const data = {
+      comment: JSON.stringify(comment),
+      updateComment: updateComment,
+    };
 
+    return this.http.post(`${this.uri}/changeComment`, data);
+  }
 
-          rateBook(book:Book){
+  findBook(id: number) {
+    const data = {
+      id: id,
+    };
 
-           
-            const data={
-        
-              book:JSON.stringify(book),
-         
-            }
-            
-            return this.http.post(`${this.uri}/rateBook`,data)
+    return this.http.post(`${this.uri}/findBook`, data);
+  }
 
-          }
+  acceptBookRequest(book: Book) {
+    console.log(book.name);
 
+    const data = {
+      book: JSON.stringify(book),
+    };
 
-          makeRating(rating:Rating){
+    return this.http.post(`${this.uri}/acceptBookRequest`, data);
+  }
 
-          const data={
+  changeBookName(book: Book, name: string) {
+    const data = {
+      book: JSON.stringify(book),
+      name: name,
+    };
 
-            rating:JSON.stringify(rating)
-          }
+    return this.http.post(`${this.uri}/changeBookName`, data);
+  }
 
-          return this.http.post(`${this.uri}/makeRating`,data);
+  changeBookAuthors(book: Book) {
+    const data = {
+      book: JSON.stringify(book),
+    };
 
+    return this.http.post(`${this.uri}/changeBookAuthors`, data);
+  }
 
+  changeCover(book: Book, img: File) {
+    const formData: FormData = new FormData();
+    if (img != null) formData.append("profileImg", img, img.name);
+    else formData.append("profileImg", img);
 
+    formData.append("book", JSON.stringify(book));
 
-          }
+    console.log(book.id);
 
-getRatings(){
+    return this.http.post(`${this.uri}/changeCover`, formData);
+  }
 
-  return this.http.get(`${this.uri}/getRatings`);
+  changeBookGanres(book: Book) {
+    const data = {
+      book: JSON.stringify(book),
+    };
 
+    return this.http.post(`${this.uri}/changeBookGanres`, data);
+  }
+
+  changeBookDescr(book: Book, newDescr: string) {
+    const data = {
+      book: JSON.stringify(book),
+      newDescr: newDescr,
+    };
+
+    return this.http.post(`${this.uri}/changeBookDescr`, data);
+  }
+
+  changeBookDate(book: Book, newDate: string) {
+    const data = {
+      book: JSON.stringify(book),
+      newDate: newDate,
+    };
+
+    return this.http.post(`${this.uri}/changeBookDate`, data);
+  }
+
+  changeBookPages(book: Book, newPages: string) {
+    const data = {
+      book: JSON.stringify(book),
+      newPages: newPages,
+    };
+
+    return this.http.post(`${this.uri}/changeBookPages`, data);
+  }
+
+  rateBook(book: Book) {
+    const data = {
+      book: JSON.stringify(book),
+    };
+
+    return this.http.post(`${this.uri}/rateBook`, data);
+  }
+
+  makeRating(rating: Rating) {
+    const data = {
+      rating: JSON.stringify(rating),
+    };
+
+    return this.http.post(`${this.uri}/makeRating`, data);
+  }
+
+  getRatings() {
+    return this.http.get(`${this.uri}/getRatings`);
+  }
 }
-
-
-
-
-    }
-
-
-
-

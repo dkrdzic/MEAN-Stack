@@ -1,13 +1,9 @@
+export class Rating {
+  _id: any;
 
+  username: string;
 
-export class Rating{
+  bookId: number;
 
-_id:any;
-
-username:string;
-
-bookId:number;
-
-note:number;
-
+  note: number;
 }

@@ -1,83 +1,52 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
+const Schema = mongoose.Schema;
 
-
-
-const Schema=mongoose.Schema;
-
-
-let Book =new Schema({
-
-    _id: {
-        type: Schema.Types.ObjectId,
-        auto: true
-      },
-id:{
-    type:Number
-}
-      ,
-name:{
-    
-    type:String,
+let Book = new Schema({
+  _id: {
+    type: Schema.Types.ObjectId,
+    auto: true,
+  },
+  id: {
+    type: Number,
+  },
+  name: {
+    type: String,
     //required:true
+  },
+  authors: {
+    type: [String],
+    //required:true
+  },
+  date: {
+    type: String,
+    // required:true
+  },
+  ganres: {
+    type: [String],
+    // required:true
+  },
+  description: {
+    type: String,
+    // required:true
+  },
 
-}
-,
-authors:{
-    
-    type:[String],
-//required:true
+  rating: {
+    type: Number,
+    // required:true
+  },
+  coverImage: { type: String },
 
-}
-,
-date:{
-    
-    type:String ,
-   // required:true
+  pages: {
+    type: Number,
+  },
+  request: {
+    type: Boolean,
+  },
 
-}
-,
-ganres:{
-    
-    type:[String],
-   // required:true
-
-}
-,
-description:{
-    
-    type:String,
-  // required:true
-
-}
-
-,
-rating:{
-    
-    type:Number,
-   // required:true
-
-}
-,
-coverImage:{type:String},
-
-pages:
-{
-type:Number
-}
-,
-request:{
-type:Boolean
-},
-
-n:{
-    type:Number
-}
-
-
-
+  n: {
+    type: Number,
+  },
 });
 
-export default mongoose.model('Book',Book);
-
-
+export default mongoose.model("Book", Book);

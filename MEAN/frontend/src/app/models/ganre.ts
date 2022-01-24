@@ -1,7 +1,4 @@
-export class Ganre{
-
-    _id: any;
-    name:string;
-   
-    
-    }
+export class Ganre {
+  _id: any;
+  name: string;
+}

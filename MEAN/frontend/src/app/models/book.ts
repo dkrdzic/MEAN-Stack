@@ -1,30 +1,21 @@
+export class Book {
+  _id: any;
+  id: number;
+  name: string;
 
+  authors: Array<string>;
 
+  date: string;
+  ganres: Array<string>;
+  description: string;
 
-export class Book{
+  coverImage: string;
 
-    _id: any;
-    id:number;
-    name:string;
-    
-    authors:Array<string>;
-    
-    date:string;
-    ganres:Array<string>;
-    description:string;
-    
-    coverImage:string;
+  rating: number;
 
-   
-    
-    rating:number;
+  pages: number;
 
-   pages:number;
+  request: boolean;
 
-  request:boolean
-
-  n:number;
-   
-    
-    }
-    
+  n: number;
+}
