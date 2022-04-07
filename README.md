@@ -1,1 +1,1 @@
-WEB APP for an bookstore written in MEAN 
+WEB APP for a bookstore written in MEAN 
